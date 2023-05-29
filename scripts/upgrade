@@ -55,6 +55,7 @@ chown -R $app:www-data "$install_dir"
 # SETUP LUFI
 #=================================================
 ynh_script_progression --message="Configuring Lufi..."
+use_ldap=$(ynh_app_setting_get --app=$app --key=use_ldap)
 
 ldap="#"
 if [ $use_ldap -eq 1 ];
